@@ -1,5 +1,6 @@
 # typora-theme-github-dark
 a dark version of Typora's github theme
+
 [Download Theme](https://raw.githubusercontent.com/pcastelan/typora-theme-github-dark/master/github_dark.css)
 
 [Download Typora](https://typora.io/)

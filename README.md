@@ -9,7 +9,7 @@ a dark version of Typora's github theme
 
 [Typora's official instructions on how to install a theme](https://support.typora.io/About-Themes/)
 
-### Prints
+### Screens
 ![Print 1](https://i.imgur.com/NR39wZQ.png)
 ![Print 2](https://i.imgur.com/Lt7AYIZ.png)
 ![Print 3](https://i.imgur.com/jgiHjYA.png)

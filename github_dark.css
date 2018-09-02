@@ -7,41 +7,19 @@
     --active-file-bg-color: rgba(219, 219, 253, 0.4);
     --active-file-text-color: white;
     --control-text-color: #ccc;
-}
-
-@include-when-export url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Open Sans Regular'),url('./github/400.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: normal;
-    src: local('Open Sans Italic'),url('./github/400i.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: bold;
-    src: local('Open Sans Bold'),url('./github/700.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: bold;
-    src: local('Open Sans Bold Italic'),url('./github/700i.woff') format('woff')
+    --bg-code-fence:#000;
+    --code-blue:#3636cc;
+    --code-red:#c22424;
+    --light-purple:#c885f5;
+    --link-color:#8ac9ff;
+    --default-gray:#777777;
+    --default-white:#f5f5f5;
+    --default-light-gray:#cbcbcb;
+    --default-green:#4fac4f;
 }
 
 html, body{
-    color: #aaa;
-    background: #111;
+    color: var(--text-color);
     background: var(--bg-color);
 }
 
@@ -54,7 +32,7 @@ html.mac-supports-vibrant,
 }
 
 body {
-    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     line-height: 1.6;
 }
 
@@ -77,7 +55,7 @@ body > *:last-child {
     margin-bottom: 0 !important;
 }
 a {
-    color: #8ac9ff;
+    color:  var(--link-color);
 }
 h1,
 h2,
@@ -228,7 +206,7 @@ ol:last-child {
 blockquote {
     background-color: rgba(128, 128, 128, 0.05);
     padding: 0 15px;
-    color: #777777;
+    color: var(--default-gray);
     border-left: 8px solid #979797;
 }
 blockquote blockquote {
@@ -239,25 +217,19 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     word-break: initial;
-    border: 1px solid #cbcbcb;
+    border: 1px solid var(--default-light-gray);
 }
 table tr {
-    /*border-top: 1px solid #cccccc;*/
     margin: 0;
     padding: 0;
 }
-table tr:nth-child(2n) {
-    /*background-color: #f8f8f8;*/
-}
 table tr th {
     font-weight: bold;
-    /*border: 1px solid #cccccc;*/
     text-align: left;
     margin: 0;
     padding: 6px 13px;
 }
 table tr td {
-    /*border: 1px solid #cccccc;*/
     text-align: left;
     margin: 0;
     padding: 6px 13px;
@@ -273,17 +245,15 @@ table tr td:last-child {
 
 td, 
 th {
-    border-left: 1px solid #cbcbcb;
+    border-left: 1px solid var(--default-light-gray);
 }
 
 thead{
     background-color: #263238;
-    color: #f5f5f5;
+    color: var(--default-white);
 }
 
-.CodeMirror-gutters {
-    /*border-right: 1px solid #ddd;*/
-}
+
 
 /*.CodeMirror.cm-s-inner .CodeMirror-gutters {
     background: #263238;
@@ -293,9 +263,9 @@ thead{
 .md-fences,
 code,
 tt {
-    border: 1px solid #ddd;
+    border: 1px solid var(--default-gray);
     background-color: #222;
-    border-radius: 3px;
+    border-radius: 1px;
     padding: 0;
     font-family: Consolas, "Liberation Mono", Courier, monospace;
     padding: 2px 4px 0px 4px;
@@ -324,7 +294,7 @@ tt {
 }
 .task-list-item input:before {
     background-color: #111;
-    color: #4fac4f;
+    color: var(--default-green);
 }
 
 @media screen and (min-width: 914px) {
@@ -346,16 +316,13 @@ tt {
     }
 }
 
-.md-fences {
-    /*background-color: #f8f8f8;*/
-}
 #write pre.md-meta-block {
     padding: 1rem;
     font-size: 85%;
     line-height: 1.45;
     background: inherit;
     border: 0;
-    border-radius: 3px;
+    border-radius: 1px;
     color: #DDD;
     margin-top: 0 !important;
     border: 1px grey dashed;
@@ -383,7 +350,7 @@ tt {
 }
 .md-image>.md-meta {
     /*border: 1px solid #ddd;*/
-    border-radius: 3px;
+    border-radius: 1px;
     font-family: Consolas, "Liberation Mono", Courier, monospace;
     padding: 2px 4px 0px 4px;
     font-size: 0.9em;
@@ -453,9 +420,6 @@ header, .context-menu, .megamenu-content, footer{
 .md-lang {
     color: #b4654d;
 }
-
-
-
 
 .ty-side-sort-btn.active {
   background: var(--bg-color);
@@ -532,7 +496,7 @@ input.form-control {
 .menu-style-btn.active,
 .context-menu.dropdown-menu > .active > a,
 .context-menu.dropdown-menu > li > a:hover {
-  background-color: #777777;
+  background-color: var(--default-gray);
   color: white;
 }
 .form-control:focus {
@@ -544,7 +508,7 @@ input.form-control {
   background-color: inherit;
 }
 .context-menu.dropdown-menu .divider {
-  background-color: #777777;
+  background-color: var(--default-gray);
 }
 .btn {
   color: #fff;
@@ -552,7 +516,7 @@ input.form-control {
   text-decoration: none;
   white-space: nowrap;
   background-color: #444449;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -581,8 +545,8 @@ input.form-control {
   border-color: #428bca;
 }
 .mouse-entered #top-titlebar .toolbar-icon.btn:hover {
-  background-color: #777777;
-  color: #f5f5f5;
+  background-color: var(--default-gray);
+  color: var(--default-white);
 }
 
 .md-table-edit {
@@ -616,10 +580,11 @@ input.form-control {
   color: #ffffc5;
 }
 #typora-source .cm-em {
-  color: #c885f5;
+  color: var(--light-purple);
+  
 }
 #typora-source .cm-link {
-  color: #8ac9ff;
+  color: var(--link-color);
 }
 #typora-source .cm-string {
   color: #5b808d;
@@ -644,18 +609,18 @@ strong {
   color: #ffffc5;
 }
 em {
-  color: #c885f5;
+  color: var(--light-purple);
 }
 a {
-  color: #8ac9ff;
+  color: var(--link-color);
 }
 
 ol[cid] > li:before {
-    color: #4fac4f;
+    color: var(--default-green);
 }
 
 ul[cid] li:before {
-    color: #4fac4f;
+    color: var(--default-green);
 
 }
 
@@ -667,3 +632,41 @@ a.md-toc-inner {
 	text-decoration: line-through;
 	color: #333;
 }
+
+.cm-s-inner .cm-property {
+	color:var(--default-gray);
+}
+
+.cm-s-inner .cm-variable {
+	color: #666;
+}
+
+.cm-s-inner .cm-operator {
+	color:var(--default-gray);
+}
+
+.cm-s-inner .cm-def {
+	color: var(--code-blue);
+}
+
+.cm-s-inner .cm-attribute {
+	color: var(--code-blue);
+}
+
+.cm-s-inner .cm-builtin {
+	color: var(--code-blue);
+}
+
+.md-fences{
+    background: var(--bg-code-fence);
+}
+
+.cm-s-inner .cm-string {
+	color: var(--code-red);
+}
+
+.cm-atom{
+    color: var(--code-blue);
+}
+
+mark{padding:0px 5px}
